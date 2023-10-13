@@ -35,11 +35,11 @@ public class Cuenta {
 	}
 
 	public double getSaldo() {
-		return 150;
+		return saldo;
 	}
 
 	public void setSaldo(double saldo) {
-		this.saldo = 0;
+		this.saldo = saldo;
 	}
 
 	public void ingreso(double i) {

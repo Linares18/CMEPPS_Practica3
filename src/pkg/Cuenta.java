@@ -24,7 +24,7 @@ public class Cuenta {
 	}
 
 	public double getSaldo() {
-		return 0;
+		return 100;
 	}
 
 	public void setSaldo(double saldo) {
@@ -33,11 +33,11 @@ public class Cuenta {
 
 	public void ingreso(double i) {
 		// TODO Auto-generated method stub
-		
+		 
 	}
 
-	public void reintegro(double i) {
+	/*ublic void reintegro(double i) {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 }

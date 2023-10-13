@@ -27,6 +27,8 @@ class CuentaTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
+		ctaPruebas.setSaldo(50);
+		ctaPruebas2.setSaldo(0);
 	}
 
 	@AfterEach
@@ -36,13 +38,21 @@ class CuentaTest {
 	@Test
 	void testIngreso() {
 		ctaPruebas.ingreso(100);
+		ctaPruebas2.ingreso(50);
 		assertEquals(150, ctaPruebas.getSaldo());
+		//assertEquals(50, ctaPruebas2.getSaldo());
 	}
 	
-	/*@Test
+	@Test
 	void testReintegro() {
-		ctaPruebas.reintegro(50);
-		assertEquals(50, ctaPruebas.getSaldo());
-	}*/
+		ctaPruebas.reintegro(200);
+		ctaPruebas2.reintegro(350);
+		ctaPruebas2.reintegro(200);
+		ctaPruebas2.reintegro(150);
+		ctaPruebas.reintegro(200);
+		ctaPruebas.reintegro(100);
+		assertEquals(-450, ctaPruebas.getSaldo());
+		//assertEquals(-700, ctaPruebas2.getSaldo());
+	}
 
 }

@@ -3,17 +3,28 @@ package pkg;
 import java.util.ArrayList;
 import java.util.List;
 
+import pkg.Cuenta.Movimiento.Signo;
+
 public class Cuenta {
-	class Movimiento {
-		
-	}
 	
+
+	class Movimiento {
+		private double importe;
+	    public enum Signo{D, H};
+	    private String detalle;
+		private Signo signo;
+	    
+	    public Movimiento(double importe, Signo signo, String detalle) {
+	        this.importe = importe;
+	        this.detalle = detalle;
+	        this.signo = signo;
+	    }
+	}
+	    
 	private String numero;
 	private String titular;
 	private double saldo;
 	List <Movimiento> movimientos;
-	
-	
 	
 	public Cuenta(String numero, String titular, double saldo) {
 		super();
@@ -24,7 +35,7 @@ public class Cuenta {
 	}
 
 	public double getSaldo() {
-		return 100;
+		return saldo;
 	}
 
 	public void setSaldo(double saldo) {
@@ -32,12 +43,14 @@ public class Cuenta {
 	}
 
 	public void ingreso(double i) {
-		// TODO Auto-generated method stub
-		 
+		this.setSaldo(this.getSaldo() + i);
+		Movimiento movimiento = new Movimiento(i, Signo.D, "Detalle");
+		movimientos.add(movimiento);
 	}
 
-	/*ublic void reintegro(double i) {
-		// TODO Auto-generated method stub
-		
-	}*/
+	public void reintegro(double i) {
+		this.setSaldo(this.getSaldo() - i);	
+		Movimiento movimiento = new Movimiento(i, Signo.H, "Detalle");
+		movimientos.add(movimiento);
+	}
 }

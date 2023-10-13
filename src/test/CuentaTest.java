@@ -13,10 +13,12 @@ import pkg.Cuenta;
 class CuentaTest {
 
 	static Cuenta ctaPruebas;
+	static Cuenta ctaPruebas2;
 		
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		ctaPruebas = new Cuenta("12345", "Titular1", 0);
+		ctaPruebas = new Cuenta("12345", "Titular1", 50);
+		ctaPruebas2 = new Cuenta("67890", "Titular2", 0);
 	}
 
 	@AfterAll
@@ -37,10 +39,10 @@ class CuentaTest {
 		assertEquals(100, ctaPruebas.getSaldo());
 	}
 	
-	/*@Test
+	@Test
 	void testReintegro() {
 		ctaPruebas.reintegro(50);
 		assertEquals(50, ctaPruebas.getSaldo());
-	}*/
+	}
 
 }

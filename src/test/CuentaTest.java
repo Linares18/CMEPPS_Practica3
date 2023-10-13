@@ -34,11 +34,13 @@ class CuentaTest {
 	@Test
 	void testIngreso() {
 		ctaPruebas.ingreso(100);
+		assertEquals(150, ctaPruebas.getSaldo());
 	}
 	
 	@Test
 	void testReintegro() {
 		ctaPruebas.reintegro(50);
+		assertEquals(50, ctaPruebas.getSaldo());
 	}
 
 }

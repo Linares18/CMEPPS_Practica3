@@ -23,6 +23,14 @@ public class Cuenta {
 		this.movimientos = new ArrayList<>();
 	}
 
+	public double getSaldo() {
+		return 0;
+	}
+
+	public void setSaldo(double saldo) {
+		this.saldo = 0;
+	}
+
 	public void ingreso(double i) {
 		// TODO Auto-generated method stub
 		

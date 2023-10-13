@@ -40,7 +40,8 @@ class CuentaTest {
 		ctaPruebas.ingreso(100);
 		ctaPruebas2.ingreso(50);
 		assertEquals(150, ctaPruebas.getSaldo());
-		//assertEquals(50, ctaPruebas2.getSaldo());
+		//System.out.println("ingreso"+ctaPruebas.getSaldo());
+		assertEquals(50, ctaPruebas2.getSaldo());
 	}
 	
 	@Test
@@ -50,9 +51,30 @@ class CuentaTest {
 		ctaPruebas2.reintegro(200);
 		ctaPruebas2.reintegro(150);
 		ctaPruebas.reintegro(200);
-		ctaPruebas.reintegro(100);
-		assertEquals(-450, ctaPruebas.getSaldo());
-		//assertEquals(-700, ctaPruebas2.getSaldo());
+		ctaPruebas2.reintegro(100);
+		assertEquals(-350, ctaPruebas.getSaldo());
+		//System.out.println("reintegro"+ctaPruebas.getSaldo());
+		assertEquals(-500, ctaPruebas2.getSaldo());
 	}
-
+	
+	@Test
+	void testCuenta1() {
+		ctaPruebas.reintegro(200);
+		ctaPruebas.ingreso(100);
+		ctaPruebas.reintegro(200);
+		assertEquals(-250, ctaPruebas.getSaldo());
+		System.out.println("Saldo final cuenta 1: " + ctaPruebas.getSaldo());
+	}
+	
+	@Test
+	void testCuenta2() {
+		ctaPruebas2.reintegro(350);
+		ctaPruebas2.reintegro(200);
+		ctaPruebas2.reintegro(150);
+		ctaPruebas2.reintegro(100);
+		ctaPruebas2.ingreso(50);
+		System.out.println("Saldo final cuenta 2: " + ctaPruebas2.getSaldo());
+		assertEquals(-450, ctaPruebas2.getSaldo());
+		
+	}
 }

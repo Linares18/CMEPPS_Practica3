@@ -51,8 +51,13 @@ public class Cuenta {
 
 	public void reintegro(double i) {
 		//this.setSaldo(-450);
-		this.setSaldo(this.getSaldo() - i);	
-		Movimiento movimiento = new Movimiento(i, Signo.H, "Detalle");
-		movimientos.add(movimiento);
+		if (saldo - i >= -500) {
+			this.setSaldo(this.getSaldo() - i);	
+			Movimiento movimiento = new Movimiento(i, Signo.H, "Detalle");
+			movimientos.add(movimiento);
+		}
+		else {
+			System.out.println("Saldo insuficiente " + this.getSaldo());
+		}
 	}
 }

@@ -8,10 +8,15 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import pkg.Cuenta;
+
 class CuentaTest {
 
+	static Cuenta ctaPruebas;
+		
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
+		ctaPruebas = new Cuenta("12345", "Titular1", 0);
 	}
 
 	@AfterAll
@@ -27,8 +32,13 @@ class CuentaTest {
 	}
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testIngreso() {
+		ctaPruebas.ingreso(100);
+	}
+	
+	@Test
+	void testReintegro() {
+		ctaPruebas.reintegro(50);
 	}
 
 }

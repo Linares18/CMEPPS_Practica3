@@ -43,16 +43,16 @@ public class Cuenta {
 	}
 
 	public void ingreso(double i) {
-		this.setSaldo(150);
-		/*this.setSaldo(this.getSaldo() + i);
+		//this.setSaldo(150);
+		this.setSaldo(this.getSaldo() + i);
 		Movimiento movimiento = new Movimiento(i, Signo.D, "Detalle");
-		movimientos.add(movimiento);*/
+		movimientos.add(movimiento);
 	}
 
 	public void reintegro(double i) {
-		this.setSaldo(-450);
-		/*this.setSaldo(this.getSaldo() - i);	
+		//this.setSaldo(-450);
+		this.setSaldo(this.getSaldo() - i);	
 		Movimiento movimiento = new Movimiento(i, Signo.H, "Detalle");
-		movimientos.add(movimiento);*/
+		movimientos.add(movimiento);
 	}
 }
